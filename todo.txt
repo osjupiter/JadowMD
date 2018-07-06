@@ -1,0 +1,23 @@
+
+- process markdown
+  * markdonw to pdf
+  * gfm nized
+  * get code block
+  * replace code block to svg
+- html template
+  * inject contents into html
+  * make template by machete
+  * write client side code
+  * edit design
+- plantuml
+  * convert puml to svg
+- load configuration
+  * set file and path, title
+- cli interface
+  * realtime serve http
+  * render html
+
+done
+---
+
+
