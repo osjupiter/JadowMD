@@ -1,4 +1,0 @@
-@startuml
-a -> b
-aa ->c
-@enduml
