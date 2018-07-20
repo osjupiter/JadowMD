@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/flatly/bulmaswatch.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <style>
+        .side-container{
+            height: 100vh;  /*allows both columns to span the full height of the browser window*/
+            display: flex;
+            position: sticky;
+            top: 0;
+        }
+        .menu {
+            flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+            overflow-y: auto;  /*adds scroll to this container*/
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -20,18 +32,22 @@
 
 <section class="main-content columns is-fullheight section">
 
-    <aside class="menu">
-        <p class="menu-label">
-            List
-        </p>
-        <ul class="menu-list" id="menu-list">
-            {{#pages}}
-            <li><a href="#" id="menuItem-{{id}}" onclick="menuItem('{{id}}');">{{id}}</a></li>
-            {{/pages}}
-        </ul>
-    </aside>
+    <div class="side-container column is-3 is-fullheight">
+        <aside class="menu">
+            <p class="menu-label">
+                List
+            </p>
+            <ul class="menu-list" id="menu-list">
+                {{#pages}}
+                <li><a href="#" id="menuItem-{{id}}" onclick="menuItem('{{id}}');">{{id}}</a>
+                    {{{toc}}}
+                </li>
+                {{/pages}}
+            </ul>
+        </aside>
+    </div>
 
-    <div id="injectTarget" class="container column is-10">
+    <div id="injectTarget" class="container column is-9">
     </div>
 
     </div>
