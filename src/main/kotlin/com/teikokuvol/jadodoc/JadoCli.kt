@@ -15,7 +15,7 @@ class CommandArgs(parser: ArgParser) {
 
     val destination by parser.storing(
             "-o",
-            help = "destination dir").default("jadodoc.html")
+            help = "destination file").default("jadodoc.html")
 }
 
 

@@ -17,7 +17,7 @@ Feature
 
 ### PlantUML support
 
-write a code block with the language identifier `puml` language.
+Write a code block with the language identifier `puml`.
 
 ```puml
 @startuml
@@ -31,7 +31,7 @@ A <-- B
 Download
 ---
 
-You can get a compiled fatjar from [here]().
+You can get a compiled jar file from [here]().
 
 How to Use
 ---
@@ -51,6 +51,6 @@ java -jar jadowmd.jar -r [target directory]
 [demo]() 
 
 
-Now JadowMD supports an fixed template and only supports LF.
+Now JadowMD supports a single template.
 
 

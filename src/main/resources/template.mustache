@@ -26,7 +26,6 @@
         <a class="navbar-item" href="https://bulma.io">
             JadowMD
         </a>
-
     </div>
 </nav>
 
@@ -39,8 +38,19 @@
             </p>
             <ul class="menu-list" id="menu-list">
                 {{#pages}}
-                <li><a href="#" id="menuItem-{{id}}" onclick="menuItem('{{id}}');">{{id}}</a>
-                    {{{toc}}}
+                <li><a href="#" id="menuItem-{{id}}" class="menu-list-item" name="{{id}}" onclick="menuItem('{{id}}');">{{id}}</a>
+                    <ul>
+                        {{#toc.child}}
+                        <li><a href="#{{{text}}}">{{text}}</a>
+
+                            <ul>
+                                {{#child}}
+                                <li><a href="#{{{text}}}">{{text}}</a></li>
+                                {{/child}}
+                            </ul>
+                        </li>
+                        {{/toc.child}}
+                    </ul>
                 </li>
                 {{/pages}}
             </ul>
@@ -58,7 +68,20 @@
     <div class="box">
         Table of Contents
         <div class="content">
-            {{{toc}}}
+            {{#pages}}
+            <ul>
+                {{#toc.child}}
+                <li><a href="#{{{text}}}">{{text}}</a>
+
+                    <ul>
+                        {{#child}}
+                        <li><a href="#{{{text}}}">{{text}}</a></li>
+                        {{/child}}
+                    </ul>
+                </li>
+                {{/toc.child}}
+            </ul>
+            {{/pages}}
         </div>
     </div>
     <div class="content">
@@ -79,7 +102,8 @@ function selectPage(id){
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    menuItem("index")
+    var id=document.querySelectorAll(".menu-list-item")[0].name
+    menuItem(id)
 });
 function menuItem(key){
     selectPage(key)
@@ -90,49 +114,6 @@ function menuItem(key){
     document.querySelector('#menuItem-'+key).classList.add("is-active");
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 

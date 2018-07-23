@@ -12,7 +12,7 @@ data class DocGenModel(
 data class PageGenModel(
         val id: String,
         val content: String,
-        val toc: String
+        val toc: IndexNode
 )
 
 class PagesConverter {
@@ -39,8 +39,7 @@ class PagesConverter {
             val src = it.text
             val parsedTree = MarkdownParser(flavour).buildMarkdownTreeFromString(src)
             val maincontent = HtmlGenerator(src, parsedTree, flavour).generateHtml()
-            val toc = genToc(flavour.root)
-            PageGenModel(content = maincontent, toc = toc, id = it.name)
+            PageGenModel(content = maincontent, toc = flavour.root, id = it.name)
         }
         return DocGenModel(pages = pagemodels, outputfile = args.destination)
     }

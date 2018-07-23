@@ -12,7 +12,7 @@ interface TemplateEngine {
 class MustacheEngine : TemplateEngine {
     override fun outputDoc(model: DocGenModel) {
         val mf = DefaultMustacheFactory()
-        val mustache = mf.compile("template.html")
+        val mustache = mf.compile("template.mustache")
         mustache.execute(PrintWriter(File(model.outputfile),"utf-8"), model).flush()
     }
 }
