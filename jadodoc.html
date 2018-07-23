@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JadownMD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/flatly/bulmaswatch.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <style>
+
+        @media screen and (min-width: 768px) {
+            side-container{
+                height: 100vh;  /*allows both columns to span the full height of the browser window*/
+                display: flex;
+                position: sticky;
+                top: 0;
+            }
+        }
+        .menu {
+            flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+            overflow-y: auto;  /*adds scroll to this container*/
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-start">
+        <a class="navbar-item" href="https://github.com/osjupiter/JadowMD">
+            JadowMD
+        </a>
+    </div>
+</nav>
+
+<section class="main-content columns is-fullheight section">
+
+    <div class="side-container column is-3 is-fullheight">
+        <aside class="menu">
+            <p class="menu-label">
+                List
+            </p>
+            <ul class="menu-list" id="menu-list">
+                <li><a href="#" id="menuItem-readme" class="menu-list-item" name="readme" onclick="menuItem('readme');">readme</a>
+                    <ul>
+                        <li><a href="#PlantUML support">PlantUML support</a>
+
+                            <ul>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <div id="injectTarget" class="container column is-9">
+    </div>
+
+    </div>
+</section>
+
+<template id="readme">
+    <div class="box">
+        Table of Contents
+        <div class="content">
+            <ul>
+                <li><a href="#PlantUML support">PlantUML support</a>
+
+                    <ul>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div><p>JadowMD
+===
+
+JadowMD is an alternative markdown to html documents tool.
+
+Overview
+---
+
+JadowMD is provided as single jar file and works with jre8+,
+so JadowMD has a lot of portability.
+You can generate documents from markdown not with any environment managements or dependency controll but with only jre.
+
+This tool is written in Kotlin.
+
+Feature
+---
+</p><h3><a id="PlantUML support"></a>PlantUML support</h3><p>
+Write a code block with the language identifier <code>puml</code>.
+</p><pre><code class="language-puml">@startuml
+A -&gt; B
+A &lt;-- B
+@enduml
+```
+[demo](https://osjupiter.github.io/JadowMD/demos/jadodoc.html)
+
+
+Download
+---
+
+You can get a compiled jar file from [here]().
+
+How to Use
+---
+
+execute the following code.
+
+```cmd
+java -jar jadowmd.jar  [target markdown]
+```
+
+or
+
+```cmd
+java -jar jadowmd.jar -r [target directory]
+```
+
+[demo](https://osjupiter.github.io/JadowMD/demos/jadodoc.html) 
+
+
+Now JadowMD supports a single template.
+
+
+</code></pre></div>
+    </div>
+</template>
+
+<script type="text/javascript">
+
+function selectPage(id){
+    var t = document.querySelector('#'+id);
+    var parent=document.querySelector('#injectTarget')
+
+    var clone = document.importNode(t.content, true);
+    parent.textContent = null;
+    parent.appendChild(clone);
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    var id=document.querySelectorAll(".menu-list-item")[0].name
+    menuItem(id)
+});
+function menuItem(key){
+    selectPage(key)
+    let old=document.querySelector(".is-active")
+    if(old!=null){
+        old.classList.remove("is-active")
+    }
+    document.querySelector('#menuItem-'+key).classList.add("is-active");
+
+}
+
+</script>
+
+</body>
+</html>
+
