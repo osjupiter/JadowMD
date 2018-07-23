@@ -25,7 +25,7 @@ A -> B
 A <-- B
 @enduml
 ```
-[demo]()
+[demo](https://osjupiter.github.io/JadowMD/demos/jadodoc.html)
 
 
 Download
@@ -48,7 +48,7 @@ or
 java -jar jadowmd.jar -r [target directory]
 ```
 
-[demo]() 
+[demo](https://osjupiter.github.io/JadowMD/demos/jadodoc.html) 
 
 
 Now JadowMD supports a single template.

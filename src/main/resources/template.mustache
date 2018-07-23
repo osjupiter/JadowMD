@@ -3,16 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>JadownMD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/flatly/bulmaswatch.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <style>
-        .side-container{
-            height: 100vh;  /*allows both columns to span the full height of the browser window*/
-            display: flex;
-            position: sticky;
-            top: 0;
+
+        @media screen and (min-width: 768px) {
+            side-container{
+                height: 100vh;  /*allows both columns to span the full height of the browser window*/
+                display: flex;
+                position: sticky;
+                top: 0;
+            }
         }
         .menu {
             flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
@@ -23,7 +26,7 @@
 <body>
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-start">
-        <a class="navbar-item" href="https://bulma.io">
+        <a class="navbar-item" href="https://github.com/osjupiter/JadowMD">
             JadowMD
         </a>
     </div>
