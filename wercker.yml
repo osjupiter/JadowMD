@@ -21,7 +21,7 @@ deploy:
          name: get version from build.gradle
          code: export APP_VERSION=$(grep "project.version" build.gradle | cut -d"'" -f2)
     - github-create-release:
-        token: $GITHUB_TOK
+        token: $GITHUB_TOKEN
         tag: $APP_VERSION
     - github-upload-asset:
         token: $GITHUB_TOKEN
