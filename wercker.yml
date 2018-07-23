@@ -22,7 +22,8 @@ deploy:
          code: export APP_VERSION=$(grep "project.version" build.gradle | cut -d"'" -f2)
     - github-create-release:
         token: $GITHUB_TOKEN
-        tag_name: v$APP_VERSION
+        tag: $APP_VERSION
     - github-upload-asset:
         token: $GITHUB_TOKEN
+        content-type: application/zip
         file: build/libs/jadowmd.jar
