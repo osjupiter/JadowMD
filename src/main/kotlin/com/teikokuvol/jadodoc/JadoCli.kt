@@ -23,7 +23,7 @@ class JadoCli(val searcher: TargetFilesSearcher, val pagesConverter: PagesConver
     fun run(args: Array<String>) {
         val config = ArgParser(args).parseInto(::CommandArgs)
         val pages = searcher.getPages(config)
-        val model = pagesConverter.genereateModel(pages, config)
+        val model = pagesConverter.generateModel(pages, config)
         templateEngine.outputDoc(model)
     }
 

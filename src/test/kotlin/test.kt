@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 class TestAll {
     @Test
     fun hoge() {
-        JadoCli.main(listOf("-r", "test").toTypedArray())
+        JadoCli.main(listOf("a").toTypedArray())
 
     }
 

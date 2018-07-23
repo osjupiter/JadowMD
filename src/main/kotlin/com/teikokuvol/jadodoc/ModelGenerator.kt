@@ -16,9 +16,9 @@ data class PageGenModel(
 )
 
 class PagesConverter {
-    fun genToc(node: IndexNode): String {
+    private fun genToc(node: IndexNode): String {
         fun walk(i: IndexNode, buffer: StringBuffer, isRoot: Boolean = false) {
-            if (!isRoot) buffer.append("<li><a href=\"#${i.text}\">" + i.text  + "</a>")
+            if (!isRoot) buffer.append("<li><a href=\"#${i.text}\">" + i.text + "</a>")
             buffer.append("<ul>")
             (i.child.forEach {
                 walk(it, buffer)
@@ -32,7 +32,7 @@ class PagesConverter {
         return buf.toString()
     }
 
-    fun genereateModel(pages: Pages, args: CommandArgs): DocGenModel {
+    fun generateModel(pages: Pages, args: CommandArgs): DocGenModel {
 
         val pagemodels = pages.texts.map {
             val flavour = JadoMdDescriptor(GFMFlavourDescriptor())

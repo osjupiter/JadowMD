@@ -1,6 +1,7 @@
 package com.teikokuvol.jadodoc
 
 import java.io.File
+import java.nio.charset.Charset
 
 
 data class PageFile(
@@ -23,12 +24,12 @@ class TargetFilesSearcherImpl : TargetFilesSearcher {
         // for directory
         if (args.directory.isNotEmpty()) {
             val res = mutableListOf<PageFile>()
-            args.directory.forEach {mdname->
+            args.directory.forEach { mdname ->
                 val texts = File(mdname).listFiles()
                 texts.forEach {
                     res.add(PageFile(
                             name = it.nameWithoutExtension,
-                            text = it.readText()
+                            text = it.readText(Charset.forName("utf-8"))
                     ))
                 }
             }
@@ -38,7 +39,7 @@ class TargetFilesSearcherImpl : TargetFilesSearcher {
         val f = File(args.source)
         return Pages(listOf(PageFile(
                 name = f.nameWithoutExtension,
-                text = f.readText()
+                text = f.readText(Charset.forName("utf-8"))
         )))
     }
 }
