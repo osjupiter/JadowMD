@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 class TestAll {
     @Test
     fun hoge() {
-        JadoCli.main(listOf("readme.md", "-o", "demo/jadodoc.html").toTypedArray())
+        JadoCli.main(listOf("readme.md", "-o", "docs/demos/jadodoc.html").toTypedArray())
 
     }
 
