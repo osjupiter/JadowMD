@@ -16,7 +16,7 @@ apply plugin: 'application'
 apply plugin: 'com.github.johnrengelman.shadow'
 
 
-project.version = '0.1.'
+project.version = '0.1.1'
 mainClassName = 'com.teikokuvol.jadodoc.JadoCli'
 repositories {
     jcenter()
