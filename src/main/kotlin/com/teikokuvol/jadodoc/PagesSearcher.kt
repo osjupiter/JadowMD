@@ -19,6 +19,12 @@ interface TargetFilesSearcher {
 }
 
 class TargetFilesSearcherImpl : TargetFilesSearcher {
+
+    private fun readTextFromFile(file: File): String {
+        val text = file.readText(Charset.forName("utf-8"))
+        return text.replace("(\\r|\\n|\\r\\n)+", "\\\\n")
+    }
+
     override fun getPages(args: CommandArgs): Pages {
 
         // for directory
@@ -29,8 +35,8 @@ class TargetFilesSearcherImpl : TargetFilesSearcher {
                 texts.forEach {
                     res.add(PageFile(
                             name = it.nameWithoutExtension,
-                            text = it.readText(Charset.forName("utf-8"))
-                    ))
+                            text = readTextFromFile(it))
+                    )
                 }
             }
             return Pages(res)
@@ -39,7 +45,7 @@ class TargetFilesSearcherImpl : TargetFilesSearcher {
         val f = File(args.source)
         return Pages(listOf(PageFile(
                 name = f.nameWithoutExtension,
-                text = f.readText(Charset.forName("utf-8"))
+                text = readTextFromFile(f)
         )))
     }
 }
