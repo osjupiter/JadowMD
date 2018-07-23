@@ -15,7 +15,6 @@ build:
     - java/gradle:
       task: shadowJar
       cache_project_cache: true
-      
 deploy:
   steps:
     - script:
