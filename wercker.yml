@@ -25,4 +25,5 @@ deploy:
         tag: $APP_VERSION
     - github-upload-asset:
         token: $GITHUB_TOKEN
+        content-type: application/zip
         file: build/libs/jadowmd.jar
