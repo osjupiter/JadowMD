@@ -2,6 +2,7 @@ JadowMD
 ===
 
 JadowMD is an alternative markdown to html documents tool.
+This tool is under development.
 
 Overview
 ---
