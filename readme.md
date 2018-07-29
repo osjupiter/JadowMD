@@ -1,8 +1,8 @@
 JadowMD
 ===
 
-JadowMD is an alternative markdown to html documents tool.
-This tool is under development.
+JadowMD is command line tool to generate html documents from markdown files.
+
 
 Overview
 ---
@@ -53,7 +53,7 @@ java -jar jadowmd.jar -r [target directory] -o [output file]
 [demo](https://osjupiter.github.io/JadowMD/demos/jadodoc.html) 
 
 
-Now JadowMD supports a specified single template which using [bulma](https://bulma.io/) and [bulmaswatch](https://jenil.github.io/bulmaswatch/).
+Now JadowMD supports a specified single template using [bulma](https://bulma.io/) and [bulmaswatch](https://jenil.github.io/bulmaswatch/).
 This template generates a single html file from multiple source markdown files.
 For details, See [generated html source code](https://github.com/osjupiter/JadowMD/blob/master/docs/demos/jadodoc.html).
 
