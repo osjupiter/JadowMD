@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fosjupiter%2FJadowMD.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fosjupiter%2FJadowMD?ref=badge_shield)
+
 JadowMD
 ===
 
@@ -58,3 +60,7 @@ This template generates a single html file from multiple source markdown files.
 For details, See [generated html source code](https://github.com/osjupiter/JadowMD/blob/master/docs/demos/jadodoc.html).
 
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fosjupiter%2FJadowMD.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fosjupiter%2FJadowMD?ref=badge_large)
