@@ -31,7 +31,7 @@ class TargetFilesSearcherImpl : TargetFilesSearcher {
         if (args.directory.isNotEmpty()) {
             val res = mutableListOf<PageFile>()
             args.directory.forEach { mdname ->
-                val texts = File(mdname).listFiles()
+                val texts = File(mdname).listFiles().filter{it.name.endsWith(".md")}
                 texts.forEach {
                     res.add(PageFile(
                             name = it.nameWithoutExtension,
